@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-primary: #004e41;
+    --color-secondary: #59c99d;
+    --color-support: #dfff90;
+    --color-accent: #ff5204;
+    --font-host: 'Host Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  html {
+    font-family: var(--font-host);
+    color: #132622;
+    background-color: #f7faf8;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-host);
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Custom utility classes matching Eequa brand */
+.bg-eequa-forest {
+  background-color: #004e41;
+}
+
+.text-eequa-forest {
+  color: #004e41;
+}
+
+.border-eequa-forest {
+  border-color: #004e41;
+}
+
+.bg-eequa-pine {
+  background-color: #59c99d;
+}
+
+.text-eequa-pine {
+  color: #59c99d;
+}
+
+.bg-eequa-lime {
+  background-color: #dfff90;
+}
+
+.text-eequa-lime {
+  color: #dfff90;
+}
+
+.text-eequa-accent {
+  color: #ff5204;
+}
+
+.bg-eequa-accent {
+  background-color: #ff5204;
+}
+
+/* Subtle editorial textures */
+.bg-grid-subtle {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 78, 65, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 78, 65, 0.04) 1px, transparent 1px);
+}
+
+.bg-dot-subtle {
+  background-image: radial-gradient(rgba(0, 78, 65, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}

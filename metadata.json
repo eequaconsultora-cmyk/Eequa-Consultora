@@ -1,0 +1,6 @@
+{
+  "name": "Eequa Consultora",
+  "description": "Estrategia y gestión para el turismo de bienestar. Consultora especializada en desarrollo de destinos, marketing territorial y desarrollo organizacional.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

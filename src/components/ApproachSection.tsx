@@ -1,6 +1,6 @@
 import React from 'react';
 import { APPROACH_STEPS } from '../data/siteData';
-import { Workflow, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export const ApproachSection: React.FC = () => {
   return (
@@ -13,18 +13,14 @@ export const ApproachSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#004e41]/10 text-xs font-bold text-[#004e41] uppercase tracking-wider mb-4">
-            <Workflow className="w-3.5 h-3.5 text-[#004e41]" />
-            <span>Diferencial de Método</span>
-          </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#004e41] leading-tight mb-5">
             Nuestro Enfoque
           </h2>
-          <p className="text-lg text-[#374f49] font-medium leading-relaxed">
+          <p className="text-lg text-[#374f49] font-medium leading-relaxed mb-2">
             Integramos estrategia, gestión, comunicación y desarrollo organizacional.
           </p>
-          <p className="text-sm sm:text-base text-[#57726b] mt-2 max-w-2xl mx-auto">
-            Ninguna problemática turística o institucional puede resolverse de forma aislada. Conectamos cada eslabón para que las decisiones se traduzcan en impacto real sobre el territorio.
+          <p className="text-sm sm:text-base text-[#57726b] max-w-2xl mx-auto leading-relaxed">
+            Ante las problemáticas turísticas o institucionales pensamos soluciones integrales. Conectamos cada eslabón para que las decisiones se traduzcan en impacto real.
           </p>
         </div>
 

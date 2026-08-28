@@ -36,22 +36,22 @@ export const WhyEequaSection: React.FC = () => {
 
   return (
     <section
-      id="por-que-eequa"
-      className="py-20 md:py-28 bg-[#f0f5f2] border-b border-[#004e41]/10 relative"
-      aria-label="Diferenciales de Eequa"
+      id="enfoque"
+      className="py-20 md:py-28 bg-[#f0f5f2] border-b border-[#004e41]/10 relative scroll-mt-20"
+      aria-label="Nuestro Enfoque"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#004e41]/10 text-xs font-bold text-[#004e41] uppercase tracking-wider mb-4">
-            <span>Diferenciales Competitivos</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#004e41] leading-tight mb-4">
-            ¿Por qué Eequa?
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#004e41] leading-tight mb-5">
+            Nuestro Enfoque
           </h2>
-          <p className="text-base sm:text-lg text-[#3d544f] leading-relaxed">
-            No ofrecemos soluciones estándar. Aportamos un método comprobado que une la mirada de destino con la gestión de las personas.
+          <p className="text-lg text-[#374f49] font-medium leading-relaxed mb-2">
+            Integramos estrategia, gestión, comunicación y desarrollo organizacional.
+          </p>
+          <p className="text-sm sm:text-base text-[#57726b] max-w-2xl mx-auto leading-relaxed">
+            Ante las problemáticas turísticas o institucionales pensamos soluciones integrales. Conectamos cada eslabón para que las decisiones se traduzcan en impacto real.
           </p>
         </div>
 

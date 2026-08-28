@@ -92,15 +92,6 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="#escenarios"
-                  onClick={(e) => handleNavClick(e, '#escenarios')}
-                  className="hover:text-[#dfff90] transition-colors"
-                >
-                  Escenarios de Intervención
-                </a>
-              </li>
-              <li>
-                <a
                   href="#servicios"
                   onClick={(e) => handleNavClick(e, '#servicios')}
                   className="hover:text-[#dfff90] transition-colors"
@@ -128,20 +119,11 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="#por-que-eequa"
-                  onClick={(e) => handleNavClick(e, '#por-que-eequa')}
+                  href="#metodologia"
+                  onClick={(e) => handleNavClick(e, '#metodologia')}
                   className="hover:text-[#dfff90] transition-colors"
                 >
-                  ¿Por qué Eequa?
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#insights"
-                  onClick={(e) => handleNavClick(e, '#insights')}
-                  className="hover:text-[#dfff90] transition-colors"
-                >
-                  Insights & Artículos
+                  Cómo Trabajamos
                 </a>
               </li>
               <li>

@@ -1,30 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { SERVICES } from '../data/siteData';
 import { ServicePillar } from '../types';
-import { ArrowUpRight, Check, Compass, Users2, Megaphone, GraduationCap } from 'lucide-react';
+import { ArrowUpRight, Check } from 'lucide-react';
 
 interface ServicesSectionProps {
   onSelectServiceForInquiry?: (serviceTitle: string) => void;
 }
 
 export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServiceForInquiry }) => {
-  const [activeTab, setActiveTab] = useState<string>(SERVICES[0].id);
-
-  const getServiceIcon = (id: string) => {
-    switch (id) {
-      case 'estrategia-gestion':
-        return <Compass className="w-5 h-5" />;
-      case 'desarrollo-organizacional':
-        return <Users2 className="w-5 h-5" />;
-      case 'comunicacion-marketing':
-        return <Megaphone className="w-5 h-5" />;
-      case 'capacitacion-formacion':
-        return <GraduationCap className="w-5 h-5" />;
-      default:
-        return <Compass className="w-5 h-5" />;
-    }
-  };
-
   const handleInquiry = (service: ServicePillar) => {
     if (onSelectServiceForInquiry) {
       onSelectServiceForInquiry(service.title);
@@ -47,9 +30,6 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#004e41]/10 text-xs font-bold text-[#004e41] uppercase tracking-wider mb-3">
-              <span>Ámbitos de Trabajo</span>
-            </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#004e41] leading-tight">
               Nuestros Servicios
             </h2>
@@ -79,40 +59,27 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
             return (
               <div
                 key={pillar.id}
-                className="rounded-2xl border border-[#004e41]/15 bg-[#fbfdfc] p-7 sm:p-9 flex flex-col justify-between hover:border-[#004e41]/40 hover:shadow-lg hover:shadow-[#004e41]/5 transition-all duration-300 group"
+                className="rounded-2xl border border-[#004e41]/15 bg-[#fbfdfc] p-7 sm:p-9 flex flex-col justify-between hover:border-[#ff5204]/40 hover:shadow-lg hover:shadow-[#004e41]/5 transition-all duration-300 group"
               >
                 <div>
-                  {/* Top Header Row */}
-                  <div className="flex items-center justify-between gap-4 mb-6">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-[#004e41] text-[#59c99d] flex items-center justify-center shadow-sm">
-                        {getServiceIcon(pillar.id)}
-                      </div>
-                      <span className="font-mono text-sm font-bold text-[#59c99d] bg-[#004e41] px-2 py-0.5 rounded">
-                        {pillar.number}
-                      </span>
-                    </div>
-
-                    <span className="text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1 rounded bg-[#004e41]/8 text-[#004e41]">
-                      Servicio Especializado
-                    </span>
-                  </div>
-
-                  {/* Title & Tagline */}
-                  <h3 className="text-2xl font-bold text-[#004e41] mb-2 group-hover:text-[#00382f] transition-colors">
+                  {/* Title */}
+                  <h3 className="text-2xl font-bold text-[#ff5204] mb-3 leading-snug">
                     {pillar.title}
                   </h3>
-                  <p className="text-sm font-medium text-[#59756e] mb-5 italic">
-                    "{pillar.tagline}"
-                  </p>
+
+                  {pillar.tagline && (
+                    <p className="text-sm font-medium text-[#59756e] mb-4 italic">
+                      "{pillar.tagline}"
+                    </p>
+                  )}
 
                   {/* Description */}
-                  <p className="text-sm text-[#2d423e] leading-relaxed mb-6">
+                  <p className="text-sm sm:text-base text-[#2d423e] leading-relaxed mb-6">
                     {pillar.description}
                   </p>
 
                   {/* Detailed Subservices List */}
-                  <div className="space-y-3.5 pt-4 border-t border-[#004e41]/10 mb-6">
+                  <div className="space-y-3 pt-4 border-t border-[#004e41]/10 mb-6">
                     <p className="text-xs font-bold uppercase tracking-wider text-[#004e41]">
                       Servicios asociados:
                     </p>
@@ -125,9 +92,11 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                           <h4 className="text-xs sm:text-sm font-semibold text-[#1a2f2b]">
                             {sub.title}
                           </h4>
-                          <p className="text-xs text-[#526b64] mt-0.5 leading-normal">
-                            {sub.description}
-                          </p>
+                          {sub.description ? (
+                            <p className="text-xs text-[#526b64] mt-0.5 leading-normal">
+                              {sub.description}
+                            </p>
+                          ) : null}
                         </div>
                       </div>
                     ))}
@@ -135,16 +104,11 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                 </div>
 
                 {/* Card Bottom CTA */}
-                <div className="pt-5 border-t border-[#004e41]/10 flex items-center justify-between">
-                  <div className="text-[11px] text-[#5b736d]">
-                    <span className="font-semibold text-[#004e41]">Orientado a:</span>{' '}
-                    {pillar.idealFor.slice(0, 2).join(', ')}...
-                  </div>
-
+                <div className="pt-4 border-t border-[#004e41]/10 flex items-center justify-end">
                   <button
                     type="button"
                     onClick={() => handleInquiry(pillar)}
-                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold bg-[#004e41]/10 text-[#004e41] hover:bg-[#004e41] hover:text-white transition-colors duration-200"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-bold bg-[#004e41]/10 text-[#004e41] hover:bg-[#004e41] hover:text-white transition-colors duration-200"
                   >
                     <span>Consultar</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
@@ -160,7 +124,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
         <div className="p-6 sm:p-8 rounded-2xl bg-[#004e41] text-white flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="max-w-3xl">
             <h4 className="text-lg sm:text-xl font-bold text-white mb-2">
-              ¿No tenés certeza de qué servicio requiere tu organización?
+              ¿Necesitás ayuda en tu organización?
             </h4>
             <p className="text-sm text-[#d4ebe2] leading-relaxed">
               Partimos de un diagnóstico del escenario real para definir qué intervenciones tienen prioridad y cómo estructurar una propuesta a la medida de tu presupuesto y tiempos.

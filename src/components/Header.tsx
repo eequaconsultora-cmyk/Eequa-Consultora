@@ -21,7 +21,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContactModal }) => {
       }
 
       // Check current section
-      const sections = ['inicio', 'escenarios', 'servicios', 'enfoque', 'quienes-somos', 'por-que-eequa', 'insights', 'contacto'];
+      const sections = ['inicio', 'servicios', 'enfoque', 'quienes-somos', 'metodologia', 'contacto'];
       const scrollPosition = window.scrollY + 120;
 
       for (const section of sections) {
@@ -43,12 +43,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContactModal }) => {
 
   const navLinks = [
     { label: 'Inicio', href: '#inicio', id: 'inicio' },
-    { label: 'Escenarios', href: '#escenarios', id: 'escenarios' },
     { label: 'Servicios', href: '#servicios', id: 'servicios' },
     { label: 'Nuestro Enfoque', href: '#enfoque', id: 'enfoque' },
     { label: 'Quiénes Somos', href: '#quienes-somos', id: 'quienes-somos' },
-    { label: '¿Por qué Eequa?', href: '#por-que-eequa', id: 'por-que-eequa' },
-    { label: 'Insights', href: '#insights', id: 'insights' },
+    { label: 'Cómo Trabajamos', href: '#metodologia', id: 'metodologia' },
     { label: 'Contacto', href: '#contacto', id: 'contacto' },
   ];
 

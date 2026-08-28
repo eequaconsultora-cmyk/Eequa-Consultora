@@ -99,25 +99,21 @@ export const SERVICES: ServicePillar[] = [
     number: '01',
     id: 'estrategia-gestion',
     title: 'Estrategia y Gestión',
-    tagline: 'Planificación con vocación de territorio y capacidad de ejecución.',
-    description: 'Transformamos visiones y desafíos en planes de acción viables. Acompañamos tanto la etapa de formulación como la coordinación en terreno para que los proyectos se concreten con solidez.',
+    tagline: '',
+    description: 'Transformamos visiones y desafíos en planes de acción. Acompañamos tanto la etapa de formulación como la coordinación en terreno para que los proyectos se concreten con solidez.',
     strategicFocus: 'Orientado a destinos, municipios y organizaciones que precisan un rumbo claro y un método riguroso de implementación.',
     services: [
       {
-        title: 'Planificación estratégica de destinos de bienestar',
-        description: 'Diagnóstico territorial, identificación de vocaciones turísticas, diseño de lineamientos de desarrollo sostenible y formulación de planes rectores.'
+        title: 'Planificación estratégica de destinos',
+        description: ''
       },
       {
         title: 'Diseño de proyectos y programas',
-        description: 'Estructuración técnica de iniciativas públicas y privadas, definición de presupuestos, cronogramas, fuentes de financiamiento y modelos de gobernanza.'
+        description: ''
       },
       {
-        title: 'Coordinación en la implementación',
-        description: 'Gestión ejecutiva de proyectos, articulación entre actores públicos y privados, y seguimiento de hitos para garantizar el cumplimiento de objetivos.'
-      },
-      {
-        title: 'Asistencia técnica en la implementación',
-        description: 'Acompañamiento directo a equipos de gobierno y directores de complejos para resolver contingencias operativas y asegurar estándares de calidad.'
+        title: 'Coordinación y asistencia técnica en la implementación',
+        description: ''
       }
     ],
     idealFor: ['Municipios turísticos', 'Complejos termales y de bienestar', 'Secretarías y Direcciones de Turismo', 'Entes mixtos de turismo']
@@ -126,21 +122,21 @@ export const SERVICES: ServicePillar[] = [
     number: '02',
     id: 'desarrollo-organizacional',
     title: 'Desarrollo Organizacional',
-    tagline: 'Las estrategias solo funcionan si las organizaciones están preparadas para ejecutarlas.',
+    tagline: '',
     description: 'Trabajamos sobre las personas, los procesos y las dinámicas internas. Ayudamos a ordenar estructuras, clarificar roles y construir culturas de trabajo colaborativas y saludables.',
     strategicFocus: 'Orientado a organizaciones con crecimiento acelerado, recambio de autoridades o necesidad de profesionalizar su gestión cotidiana.',
     services: [
       {
-        title: 'Formación y desarrollo de habilidades organizacionales',
-        description: 'Talleres prácticos y programas de entrenamiento en comunicación interna, liderazgo situacional, resolución de conflictos y coordinación efectiva.'
+        title: 'Formación y desarrollo de habilitaciones organizacionales',
+        description: ''
       },
       {
         title: 'Desarrollo de equipos operativos',
-        description: 'Revisión y optimización de flujos de trabajo, definición de perfiles de puesto y alineamiento de objetivos individuales con las metas del destino.'
+        description: ''
       },
       {
         title: 'Facilitación en la gestión del cambio',
-        description: 'Metodologías de acompañamiento cercano y coaching para transicionar hacia nuevos modelos de servicio, tecnología o estructuras sin generar fricciones.'
+        description: ''
       }
     ],
     idealFor: ['Equipos municipales', 'Directorios y gerencias de complejos', 'Asociaciones intermedias', 'Empresas de hospitalidad']
@@ -149,21 +145,21 @@ export const SERVICES: ServicePillar[] = [
     number: '03',
     id: 'comunicacion-marketing',
     title: 'Comunicación y Marketing Estratégico',
-    tagline: 'Comunicar no es hacer ruido: es construir valor coherente con la experiencia real.',
-    description: 'Abordamos la comunicación como parte indisociable de la estrategia mayor. Diseñamos posicionamientos que reflejan la identidad del territorio y atraen a las audiencias adecuadas.',
+    tagline: '',
+    description: 'Abordamos la comunicación como parte indisociable de la estrategia mayor. Diseñamos posicionamientos acordes a la identidad de la empresa o destino, para atraer a las audiencias adecuadas.',
     strategicFocus: 'Orientado a destinos y complejos que necesitan diferenciarse con autenticidad, evitando fórmulas publicitarias genéricas.',
     services: [
       {
         title: 'Posicionamiento estratégico de destinos y marcas',
-        description: 'Definición del relato de identidad, propuesta única de valor, mapa de atributos territoriales y segmentación de públicos.'
+        description: ''
       },
       {
         title: 'Estrategias integrales de comunicación',
-        description: 'Planes de comunicación externa e institucional alineados con la capacidad de carga y las prioridades de desarrollo del destino.'
+        description: ''
       },
       {
-        title: 'Marketing de experiencias de bienestar',
-        description: 'Diseño conceptual de productos turísticos, storytelling territorial y directrices para que la comunicación potencie la vivencia en destino.'
+        title: 'Desarrollo y auditoría de marcas',
+        description: ''
       }
     ],
     idealFor: ['Destinos emergentes y consolidados', 'Emprendimientos de turismo termal y naturaleza', 'Cámaras de turismo']
@@ -172,21 +168,21 @@ export const SERVICES: ServicePillar[] = [
     number: '04',
     id: 'capacitacion-formacion',
     title: 'Capacitación y Formación',
-    tagline: 'Fortalecemos capacidades locales para que el conocimiento quede instalado en el territorio.',
-    description: 'Diseñamos programas de formación a medida para equipos técnicos, prestadores y líderes de gestión, con metodologías activas y aplicadas a casos reales.',
+    tagline: '',
+    description: 'Diseñamos programas de formación a medida para equipos técnicos, prestadores y líderes de gestión, con metodologías participativas y aplicadas a casos reales.',
     strategicFocus: 'Orientado a elevar el estándar de calidad de servicio y asegurar la sostenibilidad técnica a largo plazo.',
     services: [
       {
         title: 'Capacitación a equipos de trabajo',
-        description: 'Formación específica para personal de atención, guías, mandos medios y operadores de servicios en hospitalidad y bienestar.'
+        description: ''
       },
       {
         title: 'Formación y desarrollo de habilidades organizacionales',
-        description: 'Programas modulares de gestión de tiempo, coordinación interinstitucional y metodologías ágiles de trabajo en proyectos territoriales.'
+        description: ''
       },
       {
         title: 'Desarrollo de capacidades para la gestión',
-        description: 'Transferencia de herramientas de planificación, tableros de control y evaluación de impacto para funcionarios y directores de áreas.'
+        description: ''
       }
     ],
     idealFor: ['Personal de atención al visitante', 'Equipos técnicos municipales', 'Redes de prestadores turísticos locales']

@@ -1,30 +1,16 @@
 import React, { useState } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
-import { ScenariosSection } from './components/ScenariosSection';
 import { ServicesSection } from './components/ServicesSection';
-import { ApproachSection } from './components/ApproachSection';
-import { TeamSection } from './components/TeamSection';
 import { WhyEequaSection } from './components/WhyEequaSection';
+import { TeamSection } from './components/TeamSection';
 import { MethodologySection } from './components/MethodologySection';
-import { InsightsSection } from './components/InsightsSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { WhatsAppButton } from './components/WhatsAppButton';
 
 export default function App() {
   const [selectedSubject, setSelectedSubject] = useState<string>('');
-
-  const handleSelectScenarioForContact = (scenarioTitle: string) => {
-    setSelectedSubject(`Consulta sobre escenario: ${scenarioTitle}`);
-    const contactEl = document.getElementById('contacto');
-    if (contactEl) {
-      const headerOffset = 80;
-      const elementPosition = contactEl.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-    }
-  };
 
   const handleSelectServiceForInquiry = (serviceTitle: string) => {
     setSelectedSubject(`Consulta sobre servicio: ${serviceTitle}`);
@@ -48,32 +34,23 @@ export default function App() {
         {/* 1. Hero */}
         <Hero />
 
-        {/* 2. Escenarios ("¿En qué escenarios podemos aportar valor?") */}
-        <ScenariosSection onSelectScenarioForContact={handleSelectScenarioForContact} />
-
-        {/* 3. Servicios ("Nuestros Servicios") */}
+        {/* 2. Servicios ("Nuestros Servicios") */}
         <ServicesSection onSelectServiceForInquiry={handleSelectServiceForInquiry} />
 
-        {/* 4. Enfoque Integral ("Nuestro Enfoque") */}
-        <ApproachSection />
-
-        {/* 5. ¿Por qué Eequa? (Diferenciales) */}
+        {/* 3. Nuestro Enfoque (Pilares Estratégicos & Territorio) */}
         <WhyEequaSection />
 
-        {/* 6. Quiénes Somos & Red de Profesionales */}
+        {/* 4. Quiénes Somos & Red de Profesionales */}
         <TeamSection />
 
-        {/* 7. Cómo Trabajamos (Metodología de intervención) */}
+        {/* 5. Cómo Trabajamos (Metodología de intervención) */}
         <MethodologySection />
 
-        {/* 8. Insights & Perspectivas */}
-        <InsightsSection />
-
-        {/* 9. Contacto & Trabajemos Juntos */}
+        {/* 6. Contacto & Trabajemos Juntos */}
         <ContactSection initialSubject={selectedSubject} />
       </main>
 
-      {/* 10. Footer */}
+      {/* 7. Footer */}
       <Footer />
 
       {/* Floating WhatsApp Action Button */}

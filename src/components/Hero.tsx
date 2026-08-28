@@ -87,7 +87,7 @@ export const Hero: React.FC<HeroProps> = () => {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-start gap-4 w-full sm:w-auto">
               <button
                 type="button"
-                onClick={() => handleScrollTo('escenarios')}
+                onClick={() => handleScrollTo('servicios')}
                 id="hero-primary-cta"
                 className="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-xl bg-[#004e41] text-white font-semibold text-base hover:bg-[#00382f] active:scale-[0.98] transition-all duration-200 shadow-md shadow-[#004e41]/20 group"
               >
@@ -114,26 +114,13 @@ export const Hero: React.FC<HeroProps> = () => {
                     className="w-full h-full object-cover object-center brightness-95 contrast-105"
                     loading="eager"
                   />
-                  {/* Subtle Forest overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#004e41]/90 via-[#004e41]/20 to-transparent" />
-                  
-                  {/* Caption Overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <div className="flex items-center gap-2 mb-1.5">
-                      <span className="inline-block w-2 h-2 rounded-full bg-[#dfff90]"></span>
-                      <p className="text-xs uppercase tracking-widest text-[#dfff90] font-semibold">
-                        Turismo de Bienestar
-                      </p>
-                    </div>
-                    <p className="text-sm sm:text-base font-medium text-white/95 leading-snug">
-                      Destinos, organizaciones, personas, experiencias y desarrollo sustentable.
-                    </p>
-                  </div>
+                  {/* Subtle edge overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#004e41]/30 via-transparent to-transparent pointer-events-none" />
                 </div>
               </div>
 
               {/* Floating Strategic Card */}
-              <div className="absolute -bottom-6 -left-4 sm:-left-6 bg-white rounded-xl p-4 shadow-xl border border-[#004e41]/10 max-w-[260px] sm:max-w-[280px]">
+              <div className="absolute -bottom-6 -left-4 sm:-left-6 bg-white rounded-xl p-4 shadow-xl border border-[#004e41]/10 max-w-[270px] sm:max-w-[300px]">
                 <div className="flex items-center gap-3 mb-2">
                   <div className="w-8 h-8 rounded-lg bg-[#59c99d]/20 flex items-center justify-center text-[#004e41]">
                     <Sparkles className="w-4 h-4 text-[#004e41]" />
@@ -143,8 +130,8 @@ export const Hero: React.FC<HeroProps> = () => {
                     <p className="text-[11px] text-[#557069]">Articulación integral</p>
                   </div>
                 </div>
-                <p className="text-xs text-[#304742] leading-tight">
-                  Unimos la visión de largo plazo con la capacidad de los equipos para ejecutar en el día a día.
+                <p className="text-xs text-[#304742] leading-relaxed">
+                  Integramos conocimiento y experiencia en turismo, gestión, comunicación y marketing.
                 </p>
               </div>
 

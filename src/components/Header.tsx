@@ -75,8 +75,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContactModal }) => {
         id="main-header"
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#ffffff]/92 backdrop-blur-md shadow-sm border-b border-[#004e41]/10 py-3.5'
-            : 'bg-[#f7faf8]/80 backdrop-blur-sm border-b border-transparent py-5'
+            ? 'bg-[#004e41]/95 backdrop-blur-md shadow-md border-b border-[#00382f]/60 py-3.5'
+            : 'bg-[#004e41] shadow-sm border-b border-[#00382f]/40 py-4 sm:py-5'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -85,10 +85,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContactModal }) => {
             <a
               href="#inicio"
               onClick={(e) => handleNavClick(e, '#inicio')}
-              className="group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#004e41] rounded-lg"
+              className="group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#59c99d] rounded-lg"
               aria-label="Ir al inicio de Eequa Consultora"
             >
-              <Logo variant="dark" />
+              <Logo variant="light" fileId="1ZsYFNAhteglVE_woe_dsdyX50I7SLuQb" />
             </a>
 
             {/* Desktop Navigation */}
@@ -102,8 +102,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContactModal }) => {
                     onClick={(e) => handleNavClick(e, link.href)}
                     className={`px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
                       isActive
-                        ? 'text-[#004e41] bg-[#004e41]/8 font-semibold'
-                        : 'text-[#3d544f] hover:text-[#004e41] hover:bg-[#004e41]/5'
+                        ? 'text-[#dfff90] bg-white/15 font-semibold shadow-xs'
+                        : 'text-[#e2f0ea] hover:text-white hover:bg-white/10'
                     }`}
                   >
                     {link.label}
@@ -118,11 +118,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContactModal }) => {
                 href="#contacto"
                 onClick={(e) => handleNavClick(e, '#contacto')}
                 id="header-cta-button"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#004e41] text-white text-sm font-semibold hover:bg-[#00382f] active:scale-[0.98] transition-all duration-200 shadow-sm shadow-[#004e41]/20 group"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#59c99d] text-[#00382f] text-sm font-bold hover:bg-[#dfff90] hover:text-[#004e41] active:scale-[0.98] transition-all duration-200 shadow-md shadow-[#00382f]/30 group"
               >
                 <span>Trabajemos juntos</span>
                 <span className="w-1.5 h-1.5 rounded-full bg-[#ff5204] group-hover:scale-125 transition-transform duration-200"></span>
-                <ArrowUpRight className="w-4 h-4 text-[#59c99d] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
+                <ArrowUpRight className="w-4 h-4 text-[#00382f] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
               </a>
             </div>
 
@@ -131,7 +131,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContactModal }) => {
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 rounded-xl text-[#004e41] hover:bg-[#004e41]/10 focus:outline-none focus:ring-2 focus:ring-[#004e41]"
+                className="p-2 rounded-xl text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-[#59c99d]"
                 aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú de navegación"}
                 aria-expanded={mobileMenuOpen}
               >
@@ -156,21 +156,21 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContactModal }) => {
           />
 
           {/* Drawer content */}
-          <div className="fixed inset-y-0 right-0 max-w-xs w-full bg-white shadow-2xl p-6 flex flex-col justify-between z-50 border-l border-[#004e41]/10">
+          <div className="fixed inset-y-0 right-0 max-w-xs w-full bg-white shadow-2xl flex flex-col justify-between z-50 border-l border-[#004e41]/20 overflow-y-auto">
             <div>
-              <div className="flex items-center justify-between pb-6 border-b border-[#004e41]/10">
-                <Logo variant="dark" showTagline={false} />
+              <div className="flex items-center justify-between p-5 bg-[#004e41] text-white border-b border-[#00382f]">
+                <Logo variant="light" fileId="1ZsYFNAhteglVE_woe_dsdyX50I7SLuQb" size="sm" showTagline={false} />
                 <button
                   type="button"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="p-2 rounded-lg text-[#3d544f] hover:bg-[#004e41]/10"
+                  className="p-1.5 rounded-lg text-white/80 hover:text-white hover:bg-white/10"
                   aria-label="Cerrar menú"
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
 
-              <div className="py-2">
+              <div className="p-4 py-3">
                 <p className="text-xs uppercase tracking-wider text-[#4b635e] font-semibold px-3 py-2">
                   Navegación
                 </p>
@@ -194,7 +194,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContactModal }) => {
             </div>
 
             {/* Mobile drawer footer */}
-            <div className="pt-6 border-t border-[#004e41]/10 space-y-4">
+            <div className="p-6 pt-4 border-t border-[#004e41]/10 space-y-4 bg-[#fbfdfc]">
               <a
                 href="#contacto"
                 onClick={(e) => handleNavClick(e, '#contacto')}

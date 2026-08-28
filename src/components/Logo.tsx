@@ -8,7 +8,7 @@ interface LogoProps {
   fileId?: string;
 }
 
-const HEADER_LOGO_ID = '1L1C3mvRKlsLjaXPqGQleeTaWBQdVIJLm';
+const HEADER_LOGO_ID = '1ZsYFNAhteglVE_woe_dsdyX50I7SLuQb';
 const FOOTER_LOGO_ID = '1ZsYFNAhteglVE_woe_dsdyX50I7SLuQb';
 
 const getDriveSrcOptions = (id: string) => [

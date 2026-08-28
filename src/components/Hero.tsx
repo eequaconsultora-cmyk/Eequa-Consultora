@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowUpRight, Compass, ShieldCheck, MapPin, Sparkles } from 'lucide-react';
+import { ArrowUpRight, Sparkles } from 'lucide-react';
 
 interface HeroProps {
   onExploreClick?: () => void;
@@ -54,14 +54,14 @@ export const Hero: React.FC<HeroProps> = () => {
             {/* Context Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#004e41]/8 border border-[#004e41]/15 mb-6 text-xs font-semibold text-[#004e41] tracking-tight">
               <span className="w-2 h-2 rounded-full bg-[#59c99d] animate-pulse"></span>
-              <span>Consultora Especializada en Territorio & Destinos</span>
+              <span>Estrategia · Marketing · Desarrollo Organizacional</span>
             </div>
 
             {/* Main H1 Title */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#004e41] leading-[1.08] mb-6">
-              Estrategia y gestión para el{' '}
+              Consultora especializada en{' '}
               <span className="relative inline-block text-[#004e41]">
-                turismo de bienestar
+                territorios y destinos
                 <svg
                   className="absolute -bottom-1.5 left-0 w-full h-2 text-[#59c99d]/60"
                   viewBox="0 0 100 12"
@@ -80,65 +80,22 @@ export const Hero: React.FC<HeroProps> = () => {
 
             {/* Value Proposition Copy */}
             <p className="text-lg sm:text-xl text-[#344b46] font-normal leading-relaxed max-w-2xl mb-8">
-              Acompañamos a organizaciones públicas y privadas a diseñar, gestionar y comunicar destinos de turismo de bienestar, integrando estrategia, marketing y desarrollo organizacional.
+              Acompañamos a organizaciones públicas y privadas a diseñar, gestionar y comunicar proyectos y destinos turísticos, integrando estrategia, marketing y desarrollo organizacional.
             </p>
 
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mb-10">
-              <button
-                type="button"
-                onClick={() => handleScrollTo('contacto')}
-                id="hero-primary-cta"
-                className="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-xl bg-[#004e41] text-white font-semibold text-base hover:bg-[#00382f] active:scale-[0.98] transition-all duration-200 shadow-md shadow-[#004e41]/20 group"
-              >
-                <span>Trabajemos juntos</span>
-                <span className="w-1.5 h-1.5 rounded-full bg-[#ff5204]"></span>
-                <ArrowUpRight className="w-5 h-5 text-[#59c99d] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-              </button>
-
+            {/* Action Button */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-start gap-4 w-full sm:w-auto">
               <button
                 type="button"
                 onClick={() => handleScrollTo('escenarios')}
-                id="hero-secondary-cta"
-                className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-white text-[#004e41] font-semibold text-base border border-[#004e41]/20 hover:bg-[#004e41]/5 hover:border-[#004e41]/40 active:scale-[0.98] transition-all duration-200"
+                id="hero-primary-cta"
+                className="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-xl bg-[#004e41] text-white font-semibold text-base hover:bg-[#00382f] active:scale-[0.98] transition-all duration-200 shadow-md shadow-[#004e41]/20 group"
               >
                 <span>Conocé cómo podemos ayudarte</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#ff5204]"></span>
+                <ArrowUpRight className="w-5 h-5 text-[#59c99d] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </button>
             </div>
-
-            {/* Microproof Badges - Strict & Authentic */}
-            <div className="pt-6 border-t border-[#004e41]/10 grid grid-cols-1 sm:grid-cols-3 gap-4 w-full text-xs text-[#425a54]">
-              <div className="flex items-center gap-2.5">
-                <div className="w-7 h-7 rounded-lg bg-[#004e41]/10 flex items-center justify-center shrink-0 text-[#004e41]">
-                  <Compass className="w-4 h-4" />
-                </div>
-                <div>
-                  <span className="font-bold text-[#004e41] block">Mirada Territorial</span>
-                  <span className="text-[#59736c]">Destinos y municipios</span>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-2.5">
-                <div className="w-7 h-7 rounded-lg bg-[#59c99d]/25 flex items-center justify-center shrink-0 text-[#004e41]">
-                  <MapPin className="w-4 h-4" />
-                </div>
-                <div>
-                  <span className="font-bold text-[#004e41] block">Termalismo & Naturaleza</span>
-                  <span className="text-[#59736c]">Experiencia en gestión real</span>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-2.5">
-                <div className="w-7 h-7 rounded-lg bg-[#dfff90]/60 flex items-center justify-center shrink-0 text-[#004e41]">
-                  <ShieldCheck className="w-4 h-4" />
-                </div>
-                <div>
-                  <span className="font-bold text-[#004e41] block">Enfoque Integrado</span>
-                  <span className="text-[#59736c]">Estrategia + Equipos</span>
-                </div>
-              </div>
-            </div>
-
           </div>
 
           {/* Right Column: Editorial Visual Composition (Territory & Thermal Wellbeing) */}

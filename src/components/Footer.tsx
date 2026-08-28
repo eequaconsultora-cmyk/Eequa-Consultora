@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
             </p>
 
             <p className="text-xs text-[#b8d9ce] leading-relaxed max-w-sm mb-6">
-              Acompañamos a organizaciones públicas y privadas a diseñar, gestionar y comunicar destinos de turismo de bienestar, integrando estrategia, marketing y desarrollo organizacional.
+              {BRAND_INFO.valueProposition}
             </p>
 
             {/* Social Channels & Email */}

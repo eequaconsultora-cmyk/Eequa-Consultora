@@ -10,8 +10,8 @@ import {
 
 export const BRAND_INFO = {
   name: 'Eequa Consultora',
-  tagline: 'Estrategia y gestión para el turismo de bienestar.',
-  valueProposition: 'Acompañamos a organizaciones públicas y privadas a diseñar, gestionar y comunicar destinos de turismo de bienestar, integrando estrategia, marketing y desarrollo organizacional.',
+  tagline: 'Consultora especializada en territorios y destinos.',
+  valueProposition: 'Acompañamos a organizaciones públicas y privadas a diseñar, gestionar y comunicar proyectos y destinos turísticos, integrando estrategia, marketing y desarrollo organizacional.',
   email: 'eequa.consultora@gmail.com',
   social: {
     linkedin: 'https://www.linkedin.com/company/135106704/admin/dashboard/',

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { TEAM_MEMBERS } from '../data/siteData';
-import { Award, Briefcase, Users, CheckCircle, Network, Quote, ArrowUpRight, Sparkles } from 'lucide-react';
+import { Award, Briefcase, Users, Network, Quote, ArrowUpRight, Sparkles } from 'lucide-react';
 
 const MemberAvatar: React.FC<{ name: string; fileId: string }> = ({ name, fileId }) => {
   const sources = [
@@ -101,21 +101,6 @@ export const TeamSection: React.FC = () => {
                   {member.bioParagraphs.map((para, idx) => (
                     <p key={idx}>{para}</p>
                   ))}
-                </div>
-
-                {/* Formal Credentials List */}
-                <div className="mb-6 p-4 rounded-xl bg-[#f0f7f4] border border-[#59c99d]/25">
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#004e41] block mb-2.5">
-                    Trayectoria y Formación:
-                  </span>
-                  <div className="space-y-2">
-                    {member.credentials.map((cred, idx) => (
-                      <div key={idx} className="flex items-start gap-2 text-xs text-[#203a34]">
-                        <CheckCircle className="w-3.5 h-3.5 text-[#004e41] shrink-0 mt-0.5" />
-                        <span>{cred}</span>
-                      </div>
-                    ))}
-                  </div>
                 </div>
 
                 {/* Quote (if present) */}

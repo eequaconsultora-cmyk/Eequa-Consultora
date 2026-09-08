@@ -289,7 +289,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
       'Comunicación estratégica para turismo',
       'Gestión de marcas con propósito'
     ],
-    quote: 'La comunicación tiene sentido cuando nace de la verdad del territorio y responde a un rumbo estratégico claro y compartido.'
+    quote: ''
   }
 ];
 

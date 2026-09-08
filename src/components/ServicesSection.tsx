@@ -1,24 +1,12 @@
 import React from 'react';
 import { SERVICES } from '../data/siteData';
-import { ServicePillar } from '../types';
 import { ArrowUpRight, Check } from 'lucide-react';
 
 interface ServicesSectionProps {
   onSelectServiceForInquiry?: (serviceTitle: string) => void;
 }
 
-export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServiceForInquiry }) => {
-  const handleInquiry = (service: ServicePillar) => {
-    if (onSelectServiceForInquiry) {
-      onSelectServiceForInquiry(service.title);
-    } else {
-      const contactEl = document.getElementById('contacto');
-      if (contactEl) {
-        contactEl.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  };
-
+export const ServicesSection: React.FC<ServicesSectionProps> = () => {
   return (
     <section
       id="servicios"
@@ -79,7 +67,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                   </p>
 
                   {/* Detailed Subservices List */}
-                  <div className="space-y-3 pt-4 border-t border-[#004e41]/10 mb-6">
+                  <div className="space-y-3 pt-4 border-t border-[#004e41]/10">
                     <p className="text-xs font-bold uppercase tracking-wider text-[#004e41]">
                       Servicios asociados:
                     </p>
@@ -101,18 +89,6 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                       </div>
                     ))}
                   </div>
-                </div>
-
-                {/* Card Bottom CTA */}
-                <div className="pt-4 border-t border-[#004e41]/10 flex items-center justify-end">
-                  <button
-                    type="button"
-                    onClick={() => handleInquiry(pillar)}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-bold bg-[#004e41]/10 text-[#004e41] hover:bg-[#004e41] hover:text-white transition-colors duration-200"
-                  >
-                    <span>Consultar</span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
-                  </button>
                 </div>
 
               </div>

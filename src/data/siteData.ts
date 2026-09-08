@@ -264,7 +264,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
       'Coaching ejecutivo y de equipos',
       'Articulación público-privada'
     ],
-    quote: 'El bienestar en el turismo no es un slogan decorativo; es una forma de concebir los destinos, las organizaciones que los gestionan y las vivencias de las personas.'
+    quote: ''
   },
   {
     id: 'eugenia-blanco',
@@ -298,19 +298,19 @@ export const WHY_EEQUA_POINTS: WhyReason[] = [
     id: 'mirada-estrategica',
     title: 'Mirada Estratégica',
     highlight: 'Comprensión integral antes de la acción',
-    description: 'No trabajamos acciones aisladas. Buscamos comprender a fondo hacia dónde necesita avanzar la organización o el destino, identificando causas de fondo y oportunidades estructurales.',
+    description: 'No trabajamos acciones aisladas. Buscamos comprender a fondo las necesidades de la organización o el destino y diseñamos respuestas a medida.',
     contrastStatement: 'Frente a recetas estandarizadas, diseñamos respuestas a la medida de tu realidad territorial.'
   },
   {
-    id: 'conocimiento-turismo',
-    title: 'Conocimiento del Turismo',
-    highlight: 'Experiencia directa en gestión y termalismo',
-    description: 'Combinamos experiencia concreta y vivida en turismo, destinos, termalismo y gestión operativa cotidiana. Conocemos las complejidades del sector desde adentro.',
+    id: 'experiencia-gestion',
+    title: 'Experiencia en gestión',
+    highlight: 'Vivencia real en dirección de destinos y organizaciones',
+    description: 'Combinamos experiencia concreta y vivida en turismo, destinos, termalismo y gestión operativa. Conocemos las complejidades del sector desde adentro.',
     contrastStatement: 'Frente a consultorías teóricas, aportamos vivencia real en administración y dirección de destinos.'
   },
   {
     id: 'desarrollo-organizacional',
-    title: 'Desarrollo Organizacional',
+    title: 'Foco en las personas',
     highlight: 'Equipos preparados para sostener los cambios',
     description: 'Entendemos que una gran estrategia necesita organizaciones capaces de implementarla. Trabajamos sobre el liderazgo, las habilidades y el clima de trabajo de los equipos.',
     contrastStatement: 'Frente a planes que se quedan en un papel, preparamos a las personas para hacerlos realidad.'
@@ -319,7 +319,7 @@ export const WHY_EEQUA_POINTS: WhyReason[] = [
     id: 'comunicacion-proposito',
     title: 'Comunicación con Propósito',
     highlight: 'Marketing integrado a la estrategia global',
-    description: 'Trabajamos el posicionamiento y la comunicación como parte de una estrategia integral, nunca como una pieza desconectada de la propuesta de valor y del servicio.',
+    description: 'Trabajamos el posicionamiento y la comunicación construyendo relatos que fortalecen la identidad conectada con la propuesta de valor y del servicio.',
     contrastStatement: 'Frente a publicaciones superficiales, construimos relatos que fortalecen la identidad y el posicionamiento.'
   }
 ];

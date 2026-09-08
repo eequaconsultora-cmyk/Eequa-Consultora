@@ -21,7 +21,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContactModal }) => {
       }
 
       // Check current section
-      const sections = ['inicio', 'servicios', 'enfoque', 'quienes-somos', 'metodologia', 'contacto'];
+      const sections = ['inicio', 'servicios', 'enfoque', 'quienes-somos', 'contacto'];
       const scrollPosition = window.scrollY + 120;
 
       for (const section of sections) {
@@ -46,7 +46,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContactModal }) => {
     { label: 'Servicios', href: '#servicios', id: 'servicios' },
     { label: 'Nuestro Enfoque', href: '#enfoque', id: 'enfoque' },
     { label: 'Quiénes Somos', href: '#quienes-somos', id: 'quienes-somos' },
-    { label: 'Cómo Trabajamos', href: '#metodologia', id: 'metodologia' },
     { label: 'Contacto', href: '#contacto', id: 'contacto' },
   ];
 

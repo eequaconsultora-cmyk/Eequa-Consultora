@@ -4,7 +4,6 @@ import { Hero } from './components/Hero';
 import { ServicesSection } from './components/ServicesSection';
 import { WhyEequaSection } from './components/WhyEequaSection';
 import { TeamSection } from './components/TeamSection';
-import { MethodologySection } from './components/MethodologySection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { WhatsAppButton } from './components/WhatsAppButton';
@@ -43,10 +42,7 @@ export default function App() {
         {/* 4. Quiénes Somos & Red de Profesionales */}
         <TeamSection />
 
-        {/* 5. Cómo Trabajamos (Metodología de intervención) */}
-        <MethodologySection />
-
-        {/* 6. Contacto & Trabajemos Juntos */}
+        {/* 5. Contacto & Trabajemos Juntos */}
         <ContactSection initialSubject={selectedSubject} />
       </main>
 

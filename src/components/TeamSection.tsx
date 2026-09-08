@@ -56,7 +56,7 @@ export const TeamSection: React.FC = () => {
             Quiénes Somos
           </h2>
           <p className="text-base sm:text-lg text-[#3d544f] leading-relaxed">
-            Combinamos conocimiento técnico en turismo, trayectoria concreta en la dirección de complejos y destinos, y especialización en comunicación estratégica y desarrollo organizacional.
+            Combinamos conocimiento técnico en turismo, trayectoria concreta en la dirección de complejos y destinos, y especialización en marketing y comunicación estratégica.
           </p>
         </div>
 
@@ -118,18 +118,17 @@ export const TeamSection: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Quote */}
-                <div className="p-4 rounded-xl bg-white border border-[#004e41]/10 italic text-xs text-[#425d57] flex items-start gap-2.5">
-                  <Quote className="w-4 h-4 text-[#59c99d] shrink-0 mt-0.5" />
-                  <p>"{member.quote}"</p>
-                </div>
+                {/* Quote (if present) */}
+                {member.quote ? (
+                  <div className="p-4 rounded-xl bg-white border border-[#004e41]/10 italic text-xs text-[#425d57] flex items-start gap-2.5">
+                    <Quote className="w-4 h-4 text-[#59c99d] shrink-0 mt-0.5" />
+                    <p>"{member.quote}"</p>
+                  </div>
+                ) : null}
               </div>
 
               {/* Action */}
-              <div className="pt-6 border-t border-[#004e41]/10 mt-6 flex items-center justify-between">
-                <span className="text-xs text-[#59746e]">
-                  Especialidad: {member.specialties[0]}
-                </span>
+              <div className="pt-5 border-t border-[#004e41]/10 mt-6 flex items-center justify-end">
                 <a
                   href="#contacto"
                   onClick={(e) => {
@@ -151,60 +150,31 @@ export const TeamSection: React.FC = () => {
           {/* Ambient background decoration */}
           <div className="absolute top-0 right-0 w-80 h-80 bg-[#59c99d]/10 rounded-full blur-3xl pointer-events-none" />
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-            <div className="lg:col-span-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#59c99d]/20 text-[#dfff90] text-xs font-bold uppercase tracking-wider mb-4">
-                <Network className="w-3.5 h-3.5" />
-                <span>Interdisciplina & Territorio</span>
-              </div>
-
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
-                Una mirada integral también requiere distintas miradas profesionales.
-              </h3>
-
-              <p className="text-sm sm:text-base text-[#d8eee6] leading-relaxed max-w-2xl mb-6">
-                Eequa cuenta con una red de profesionales de distintas disciplinas que se incorporan de acuerdo con las necesidades específicas de cada proyecto, garantizando un abordaje riguroso y adaptado al contexto.
-              </p>
-
-              {/* 3 Core Attributes */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/15 text-xs">
-                <div className="p-3 rounded-lg bg-white/5 border border-white/10">
-                  <span className="font-bold text-[#dfff90] block text-sm mb-0.5">Equipo flexible</span>
-                  <span className="text-white/80">Estructuras ágiles que se adaptan a la escala de cada desafío.</span>
-                </div>
-                <div className="p-3 rounded-lg bg-white/5 border border-white/10">
-                  <span className="font-bold text-[#59c99d] block text-sm mb-0.5">Conocimiento especializado</span>
-                  <span className="text-white/80">Aportes técnicos puntuales según la temática del territorio.</span>
-                </div>
-                <div className="p-3 rounded-lg bg-white/5 border border-white/10">
-                  <span className="font-bold text-white block text-sm mb-0.5">Soluciones a medida</span>
-                  <span className="text-white/80">Sin fórmulas preconcebidas ni costos de estructuras fijas innecesarias.</span>
-                </div>
-              </div>
+          <div className="relative z-10 max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#59c99d]/20 text-[#dfff90] text-xs font-bold uppercase tracking-wider mb-4">
+              <Network className="w-3.5 h-3.5" />
+              <span>Equipos interdisciplinarios</span>
             </div>
 
-            <div className="lg:col-span-4 flex flex-col items-center lg:items-end justify-center">
-              <div className="bg-[#00382f] p-6 rounded-xl border border-white/10 text-center w-full max-w-xs">
-                <p className="text-xs font-semibold text-[#59c99d] mb-2 uppercase tracking-wider">
-                  ¿Hablamos de tu equipo?
-                </p>
-                <p className="text-xs text-white/85 mb-4 leading-normal">
-                  Diseñamos el esquema de trabajo más adecuado para tu destino u organización.
-                </p>
-                <a
-                  href="#contacto"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[#59c99d] text-[#00382f] font-bold text-xs hover:bg-[#dfff90] transition-colors"
-                >
-                  <span>Iniciar conversación</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </a>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+              Una mirada integral también requiere distintas miradas profesionales.
+            </h3>
+
+            <p className="text-sm sm:text-base text-[#d8eee6] leading-relaxed mb-6">
+              Eequa cuenta con una red de profesionales de distintas disciplinas que se incorporan de acuerdo con las necesidades específicas de cada proyecto, garantizando un abordaje adaptado al contexto.
+            </p>
+
+            {/* Core Attributes */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-white/15 text-xs">
+              <div className="p-3.5 rounded-lg bg-white/5 border border-white/10">
+                <span className="font-bold text-[#dfff90] block text-sm mb-1">Equipo flexible</span>
+                <span className="text-white/85 leading-relaxed">Conformamos estructuras ágiles que se adaptan a la escala de cada desafío.</span>
+              </div>
+              <div className="p-3.5 rounded-lg bg-white/5 border border-white/10">
+                <span className="font-bold text-[#59c99d] block text-sm mb-1">Conocimiento especializado</span>
+                <span className="text-white/85 leading-relaxed">Logramos aportes técnicos puntuales según la temática del proyecto.</span>
               </div>
             </div>
-
           </div>
         </div>
 

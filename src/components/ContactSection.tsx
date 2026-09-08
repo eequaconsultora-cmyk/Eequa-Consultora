@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BRAND_INFO } from '../data/siteData';
 import { ContactFormData, FormStatus } from '../types';
-import { Mail, Phone, Send, CheckCircle2, AlertTriangle, ArrowUpRight, ShieldCheck, MapPin, Linkedin, Instagram, MessageCircle } from 'lucide-react';
+import { Mail, Phone, Send, CheckCircle2, Linkedin, Instagram, MessageCircle } from 'lucide-react';
 
 interface ContactSectionProps {
   initialSubject?: string;
@@ -44,7 +44,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialSubject =
       errs.fullName = 'Por favor ingresá tu nombre y apellido.';
     }
     if (!formData.organization.trim()) {
-      errs.organization = 'Por favor indicá tu organización, municipio o empresa.';
+      errs.organization = 'Por favor indicá tu organización.';
     }
     if (!formData.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       errs.email = 'Por favor ingresá un email válido.';
@@ -54,9 +54,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialSubject =
     }
     if (!formData.originType) {
       errs.originType = 'Por favor seleccioná el tipo de organización.';
-    }
-    if (!formData.projectDescription.trim() || formData.projectDescription.length < 10) {
-      errs.projectDescription = 'Por favor contanos brevemente sobre tu proyecto o desafío (mínimo 10 caracteres).';
     }
 
     setErrors(errs);
@@ -110,11 +107,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialSubject =
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section 13 Pre-Headline: Emocional & Profesional */}
+        {/* Section Pre-Headline */}
         <div className="max-w-3xl mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#004e41]/10 text-xs font-bold text-[#004e41] uppercase tracking-wider mb-3">
-            <span>Conversación Profesional</span>
-          </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#004e41] leading-tight mb-4">
             ¿Tenés un proyecto, un desafío o una organización que necesita avanzar?
           </h2>
@@ -131,117 +125,93 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialSubject =
             {/* Contact Card */}
             <div className="bg-white rounded-2xl p-7 sm:p-8 border border-[#004e41]/15 shadow-sm">
               <h3 className="text-xl font-bold text-[#004e41] mb-6 pb-4 border-b border-[#004e41]/10">
-                Canales de contacto directo
+                Contacto
               </h3>
 
-              <div className="space-y-5 text-sm text-[#2b443f]">
+              <div className="space-y-4 text-sm text-[#2b443f]">
                 
-                {/* General Email */}
-                <div>
-                  <span className="text-xs uppercase font-bold tracking-wider text-[#5b756f] block mb-1">
-                    Email General:
+                {/* Email */}
+                <a
+                  href={`mailto:${BRAND_INFO.email}`}
+                  className="flex items-center gap-3 p-3 rounded-xl bg-[#f0f7f4] border border-[#004e41]/10 text-[#004e41] hover:bg-[#59c99d]/15 transition-all group"
+                  aria-label={`Enviar email a ${BRAND_INFO.email}`}
+                >
+                  <div className="w-10 h-10 rounded-lg bg-[#004e41] text-[#59c99d] flex items-center justify-center shrink-0 group-hover:bg-[#00382f] transition-colors">
+                    <Mail className="w-5 h-5" />
+                  </div>
+                  <span className="font-semibold text-sm sm:text-base text-[#004e41] group-hover:underline">
+                    {BRAND_INFO.email}
                   </span>
-                  <a
-                    href={`mailto:${BRAND_INFO.email}`}
-                    className="inline-flex items-center gap-2.5 text-base font-semibold text-[#004e41] hover:text-[#ff5204] transition-colors"
-                  >
-                    <div className="w-8 h-8 rounded-lg bg-[#004e41]/10 flex items-center justify-center text-[#004e41]">
-                      <Mail className="w-4 h-4" />
+                </a>
+
+                {/* Telephone & WhatsApp */}
+                <div className="space-y-2.5">
+                  {BRAND_INFO.contacts.map((contact, idx) => (
+                    <div
+                      key={idx}
+                      className="flex items-center justify-between p-3 rounded-xl bg-[#f0f7f4] border border-[#004e41]/10"
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-lg bg-[#004e41] text-[#59c99d] flex items-center justify-center shrink-0">
+                          <Phone className="w-5 h-5" />
+                        </div>
+                        <div>
+                          <p className="font-bold text-[#004e41] text-sm sm:text-base">
+                            {contact.phone}
+                          </p>
+                          <p className="text-xs text-[#526d66]">
+                            {contact.name}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <a
+                          href={`https://wa.me/${contact.rawPhone.replace('+', '')}?text=${encodeURIComponent(`Hola ${contact.name}, me pongo en contacto desde el sitio web de Eequa Consultora.`)}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-9 h-9 rounded-lg bg-[#25D366]/15 text-[#128C7E] hover:bg-[#25D366] hover:text-white flex items-center justify-center transition-colors"
+                          title={`WhatsApp ${contact.name}`}
+                          aria-label={`Enviar WhatsApp a ${contact.name}`}
+                        >
+                          <MessageCircle className="w-4 h-4" />
+                        </a>
+                        <a
+                          href={`tel:${contact.rawPhone}`}
+                          className="w-9 h-9 rounded-lg bg-[#004e41]/10 text-[#004e41] hover:bg-[#004e41] hover:text-white flex items-center justify-center transition-colors"
+                          title={`Llamar a ${contact.name}`}
+                          aria-label={`Llamar a ${contact.name}`}
+                        >
+                          <Phone className="w-4 h-4" />
+                        </a>
+                      </div>
                     </div>
-                    <span>{BRAND_INFO.email}</span>
+                  ))}
+                </div>
+
+                {/* Social Networks Icons */}
+                <div className="pt-2 flex items-center gap-3">
+                  <a
+                    href={BRAND_INFO.social.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-xl bg-[#0077b5]/10 text-[#0077b5] hover:bg-[#0077b5] hover:text-white flex items-center justify-center transition-all"
+                    title="LinkedIn Eequa Consultora"
+                    aria-label="LinkedIn Eequa Consultora"
+                  >
+                    <Linkedin className="w-5 h-5" />
+                  </a>
+                  <a
+                    href={BRAND_INFO.social.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-xl bg-[#e4405f]/10 text-[#e4405f] hover:bg-[#e4405f] hover:text-white flex items-center justify-center transition-all"
+                    title="Instagram @eequa.consultora"
+                    aria-label="Instagram Eequa Consultora"
+                  >
+                    <Instagram className="w-5 h-5" />
                   </a>
                 </div>
 
-                {/* Telephone Numbers with Name tags strictly from source */}
-                <div className="pt-4 border-t border-[#004e41]/10">
-                  <span className="text-xs uppercase font-bold tracking-wider text-[#5b756f] block mb-2.5">
-                    Teléfonos de contacto:
-                  </span>
-
-                  <div className="space-y-3">
-                    {BRAND_INFO.contacts.map((contact, idx) => (
-                      <div key={idx} className="flex flex-col sm:flex-row sm:items-center justify-between p-3 rounded-xl bg-[#f0f7f4] border border-[#004e41]/10 gap-2">
-                        <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-lg bg-[#004e41] text-[#59c99d] flex items-center justify-center shrink-0">
-                            <Phone className="w-4 h-4" />
-                          </div>
-                          <div>
-                            <p className="font-bold text-[#004e41] text-sm">
-                              {contact.phone}
-                            </p>
-                            <p className="text-xs text-[#526d66]">
-                              {contact.name}
-                            </p>
-                          </div>
-                        </div>
-                        <div className="flex items-center gap-1.5 self-end sm:self-center">
-                          <a
-                            href={`https://wa.me/${contact.rawPhone.replace('+', '')}?text=${encodeURIComponent(`Hola ${contact.name}, me pongo en contacto desde el sitio web de Eequa Consultora.`)}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#25D366]/15 text-[#128C7E] hover:bg-[#25D366] hover:text-white transition-colors text-xs font-semibold"
-                            title={`Escribir por WhatsApp a ${contact.name}`}
-                          >
-                            <MessageCircle className="w-3.5 h-3.5" />
-                            <span>WhatsApp</span>
-                          </a>
-                          <a
-                            href={`tel:${contact.rawPhone}`}
-                            className="p-1.5 rounded-lg bg-[#004e41]/10 text-[#004e41] hover:bg-[#004e41] hover:text-white transition-colors"
-                            title={`Llamar a ${contact.name}`}
-                          >
-                            <Phone className="w-3.5 h-3.5" />
-                          </a>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Social Networks */}
-                <div className="pt-4 border-t border-[#004e41]/10">
-                  <span className="text-xs uppercase font-bold tracking-wider text-[#5b756f] block mb-2.5">
-                    Redes institucionales:
-                  </span>
-                  <div className="flex items-center gap-3">
-                    <a
-                      href={BRAND_INFO.social.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#0077b5]/10 text-[#0077b5] hover:bg-[#0077b5] hover:text-white transition-all text-xs font-semibold"
-                    >
-                      <Linkedin className="w-4 h-4" />
-                      <span>LinkedIn</span>
-                    </a>
-                    <a
-                      href={BRAND_INFO.social.instagram}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#e4405f]/10 text-[#e4405f] hover:bg-[#e4405f] hover:text-white transition-all text-xs font-semibold"
-                    >
-                      <Instagram className="w-4 h-4" />
-                      <span>Instagram</span>
-                    </a>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            {/* Territorial Scope Card */}
-            <div className="bg-[#004e41] text-white rounded-2xl p-6 sm:p-7">
-              <div className="flex items-center gap-2.5 mb-3">
-                <MapPin className="w-5 h-5 text-[#59c99d]" />
-                <h4 className="text-base font-bold text-white">
-                  Alcance Territorial
-                </h4>
-              </div>
-              <p className="text-xs sm:text-sm text-[#d4ebe2] leading-relaxed mb-4">
-                Trabajamos en territorio con municipios, complejos termales, emprendimientos de bienestar y destinos de Argentina.
-              </p>
-              <div className="pt-3 border-t border-white/15 flex items-center gap-2 text-xs text-[#dfff90]">
-                <ShieldCheck className="w-4 h-4 text-[#59c99d]" />
-                <span>Atención directa por las titulares de la consultora</span>
               </div>
             </div>
 
@@ -273,13 +243,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialSubject =
               ) : (
                 <form onSubmit={handleSubmit} noValidate className="space-y-5" aria-label="Formulario de contacto Eequa">
                   
-                  <div className="mb-2">
-                    <h3 className="text-xl sm:text-2xl font-bold text-[#004e41] mb-1">
-                      Hablemos de tu proyecto
+                  <div className="mb-6">
+                    <h3 className="text-xl sm:text-2xl font-bold text-[#004e41]">
+                      Contanos sobre tu proyecto
                     </h3>
-                    <p className="text-xs sm:text-sm text-[#546e68]">
-                      Completá el siguiente formulario y responderemos con una propuesta de trabajo adaptada a tu realidad.
-                    </p>
                   </div>
 
                   {/* Field: Full Name */}
@@ -307,7 +274,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialSubject =
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="organization" className="block text-xs font-bold uppercase tracking-wider text-[#004e41] mb-1.5">
-                        Organización / Municipio <span className="text-[#ff5204]">*</span>
+                        Organización <span className="text-[#ff5204]">*</span>
                       </label>
                       <input
                         type="text"
@@ -315,7 +282,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialSubject =
                         name="organization"
                         value={formData.organization}
                         onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
-                        placeholder="Ej: Municipalidad de... / Complejo..."
+                        placeholder="Ej: Municipalidad / Complejo / Empresa"
                         className={`w-full px-4 py-3 rounded-xl border text-sm text-[#132622] bg-[#fbfdfc] focus:outline-none focus:ring-2 focus:ring-[#004e41] transition-all ${
                           errors.organization ? 'border-[#ff5204] bg-[#fff8f5]' : 'border-[#004e41]/20'
                         }`}
@@ -417,7 +384,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialSubject =
                   {/* Field: Project Description */}
                   <div>
                     <label htmlFor="projectDescription" className="block text-xs font-bold uppercase tracking-wider text-[#004e41] mb-1.5">
-                      Contanos brevemente sobre tu proyecto o desafío <span className="text-[#ff5204]">*</span>
+                      ¿Querés contarnos sobre tu proyecto?
                     </label>
                     <textarea
                       id="projectDescription"
@@ -425,14 +392,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialSubject =
                       rows={4}
                       value={formData.projectDescription}
                       onChange={(e) => setFormData({ ...formData, projectDescription: e.target.value })}
-                      placeholder="Describí brevemente el estado de situación, los objetivos que buscan alcanzar y las necesidades prioritarias..."
-                      className={`w-full px-4 py-3 rounded-xl border text-sm text-[#132622] bg-[#fbfdfc] focus:outline-none focus:ring-2 focus:ring-[#004e41] transition-all ${
-                        errors.projectDescription ? 'border-[#ff5204] bg-[#fff8f5]' : 'border-[#004e41]/20'
-                      }`}
+                      placeholder="Describí brevemente el estado de situación, los objetivos que buscan alcanzar o cualquier detalle que quieras compartir (opcional)..."
+                      className="w-full px-4 py-3 rounded-xl border border-[#004e41]/20 text-sm text-[#132622] bg-[#fbfdfc] focus:outline-none focus:ring-2 focus:ring-[#004e41] transition-all"
                     />
-                    {errors.projectDescription && (
-                      <p className="mt-1 text-xs text-[#ff5204] font-medium">{errors.projectDescription}</p>
-                    )}
                   </div>
 
                   {/* Submit Button */}

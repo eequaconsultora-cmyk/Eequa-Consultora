@@ -119,15 +119,6 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="#metodologia"
-                  onClick={(e) => handleNavClick(e, '#metodologia')}
-                  className="hover:text-[#dfff90] transition-colors"
-                >
-                  Cómo Trabajamos
-                </a>
-              </li>
-              <li>
-                <a
                   href="#contacto"
                   onClick={(e) => handleNavClick(e, '#contacto')}
                   className="hover:text-[#dfff90] transition-colors"

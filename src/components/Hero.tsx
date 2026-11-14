@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowUpRight, Sparkles } from 'lucide-react';
+import { ArrowUpRight, MapPin } from 'lucide-react';
 
 interface HeroProps {
   onExploreClick?: () => void;
@@ -58,24 +58,8 @@ export const Hero: React.FC<HeroProps> = () => {
             </div>
 
             {/* Main H1 Title */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#004e41] leading-[1.08] mb-6">
-              Consultora especializada en{' '}
-              <span className="relative inline-block text-[#004e41]">
-                territorios y destinos
-                <svg
-                  className="absolute -bottom-1.5 left-0 w-full h-2 text-[#59c99d]/60"
-                  viewBox="0 0 100 12"
-                  preserveAspectRatio="none"
-                  fill="none"
-                >
-                  <path
-                    d="M0,7 Q50,0 100,7"
-                    stroke="currentColor"
-                    strokeWidth="3.5"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </span>
+            <h1 className="text-3xl sm:text-4xl lg:text-[2.85rem] xl:text-5xl font-bold tracking-tight text-[#004e41] leading-[1.12] mb-6">
+              Soluciones en gestión y comunicación para organizaciones y destinos turísticos
             </h1>
 
             {/* Value Proposition Copy */}
@@ -123,7 +107,7 @@ export const Hero: React.FC<HeroProps> = () => {
               <div className="absolute -bottom-6 -left-4 sm:-left-6 bg-white rounded-xl p-4 shadow-xl border border-[#004e41]/10 max-w-[270px] sm:max-w-[300px]">
                 <div className="flex items-center gap-3 mb-2">
                   <div className="w-8 h-8 rounded-lg bg-[#59c99d]/20 flex items-center justify-center text-[#004e41]">
-                    <Sparkles className="w-4 h-4 text-[#004e41]" />
+                    <MapPin className="w-4 h-4 text-[#004e41]" />
                   </div>
                   <div>
                     <p className="text-xs font-bold text-[#004e41]">Modelo de Trabajo</p>

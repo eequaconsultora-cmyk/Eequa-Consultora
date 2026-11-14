@@ -127,7 +127,7 @@ export const SERVICES: ServicePillar[] = [
     strategicFocus: 'Orientado a organizaciones con crecimiento acelerado, recambio de autoridades o necesidad de profesionalizar su gestión cotidiana.',
     services: [
       {
-        title: 'Formación y desarrollo de habilitaciones organizacionales',
+        title: 'Formulaciones de planes de trabajo a medida',
         description: ''
       },
       {
